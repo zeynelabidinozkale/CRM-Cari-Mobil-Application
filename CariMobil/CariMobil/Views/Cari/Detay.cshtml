@@ -1,0 +1,162 @@
+﻿@using CariMobil.Models
+@model DetayModel
+
+@{
+    ViewBag.Title = "Detay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="pages">
+    <div data-page="blogsingle" class="page no-toolbar no-navbar">
+        <div class="page-content">
+
+            <div class="navbarpages navbarpagesbg">
+                <div class="navbar_left">
+                    <div class="logo_text"><a onclick="window.history.back()" href="#"> <i class="fa fa-arrow-left"></i></a>  <a href="/home/index/">CariMobil</a></div>
+                </div>
+                <div class="navbar_right navbar_right_menu">
+                    <a href="#" data-panel="left" class="open-panel"><img src="~/content/images/icons/white/menu.png" alt="" title="" /></a>
+                </div>
+                <div class="navbar_right">
+                    <a href="#" data-panel="right" class="open-panel"><img src="~/content/images/icons/white/user.png" alt="" title="" /></a>
+                </div>
+                <div class="navbar_right">
+                    <a href="cart.html" data-view=".view-main"><img src="~/content/images/icons/white/cart.png" alt="" title="" /><span>3</span></a>
+                </div>
+            </div>
+
+            <div id="pages_maincontent">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="swiper-container-pages swiper-init" data-effect="slide" data-pagination=".swiper-pagination">
+                                <div class="swiper-wrapper slider-padding">
+
+                                    <div class="swiper-slide">
+                                        <img src="~/content/images/page_photo.jpg" alt="" title="" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="~/content/images/page_photo2.jpg" alt="" title="" />
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img src="~/content/images/page_photo3.jpg" alt="" title="" />
+                                    </div>
+
+                                </div>
+                                <div class="swiper-pagination"></div>
+                            </div>
+                            <div class="post_single">
+                                <h2 class="blog_title"><b> @Model.cari.ad</b>   </h2>
+
+                                <p>
+                                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+                                </p>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <span class="post_date">kayıt tarihi: @Model.cari.olTarih </span> <br />
+                                        <span class="post_date">güncellenme tarihi: @Model.cari.gunTarih </span>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <span> <a href="#" class="btn  btn-sm  btn-success"> <i class="fa fa-phone"></i>  @Model.cari.tel </a></span>
+                                        <span><a href="#" class="btn btn-sm btn-primary"><i class="fa fa-envelope"></i>  @Model.cari.email</a></span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-8 detailcontent">
+
+                            @if (ViewBag.icerik != null)
+                            {
+                                <br />
+                                <div class="col-sm-12">
+                                    <div class="alert alert-success">
+                                        @ViewBag.icerik
+                                    </div>
+                                </div>
+                                <br />
+                            }
+                            <!-- Slider -->
+
+                            <div class="page_single layout_fullwidth_padding">
+                                
+                                <a href="#" class="btn btn-lg btn-light btn-block">  <i class="fa fa-download"></i> Verileri İndir</a>
+                                <br />
+
+                                <ul class="nav nav-pills" role="tablist">
+                                    <li class="nav-item" style="width:33%;">
+                                        <a class="nav-link active" data-toggle="pill" href="#dosya">Dosyalar</a>
+                                    </li>
+
+                                    <li class="nav-item" style="width:33%;">
+                                        <a class="nav-link " data-toggle="pill" href="#pers">Personeller</a>
+                                    </li>
+                                    <li class="nav-item" style="width:33%;">
+                                        <a class="nav-link " data-toggle="pill" href="#topl">Toplantılar</a>
+                                    </li>
+
+                                </ul>
+
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div id="dosya" class="col-sm-12 tab-pane  active ">
+                                        <form action="/Cari/Detay" class="uploadform" method="post" enctype="multipart/form-data">
+                                            <input type="hidden" name="id" value="@Model.cari.CariId" />
+                                            Yeni Dosya Yükle : <input class="btn btn-light" type="file" name="files" multiple>
+                                            <button class="btn btn-success" type="submit"> <i class="fa fa-upload"></i> Dosyaları yükle</button>
+                                        </form>
+
+                                        <div class="row">
+                                            @if (Model.dosyalar.Count() > 0)
+                                            {
+                                                foreach (var item in Model.dosyalar)
+                                                {
+                                                    <div class="col-sm-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="card-text">Dosya @item.path</p>
+                                                                <a href="@item.path" class="btn btn-primary" download="myfile"> <i class="fa fa-download"></i> Dosyayı İndir</a>
+                                                                <a href="/cari/dosyaSil/@item.CariDosyalarID" class="btn btn-danger"> <i class="fa fa-trash"></i> Dosyayı Sil</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                    <div class="text-center">
+                                                        <h3 class="emptyMessage">Dosya Bulunmamaktadır</h3>
+                                                    </div>
+                                                
+                                            }
+
+
+
+
+                                        </div>
+
+
+
+
+                                    </div>
+
+                                    <div id="pers" class="container tab-pane fade">
+
+
+                                    </div>
+                                    <div id="topl" class="container tab-pane fade">
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>

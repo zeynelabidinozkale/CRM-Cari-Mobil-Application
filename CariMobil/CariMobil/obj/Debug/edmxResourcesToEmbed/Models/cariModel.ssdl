@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobilCariModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="CariDosyalar">
+    <Key>
+      <PropertyRef Name="CariDosyalarID" />
+    </Key>
+    <Property Name="CariDosyalarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cariId" Type="int" />
+    <Property Name="path" Type="nvarchar" MaxLength="300" />
+    <Property Name="yuklenmeTarihi" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Cariler">
+    <Key>
+      <PropertyRef Name="CariId" />
+    </Key>
+    <Property Name="CariId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="80" />
+    <Property Name="olTarih" Type="datetime" />
+    <Property Name="gunTarih" Type="datetime" />
+    <Property Name="tel" Type="nvarchar" MaxLength="50" />
+    <Property Name="tel2" Type="nvarchar" MaxLength="50" />
+    <Property Name="fax" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="sil" Type="bit" Nullable="false" />
+    <Property Name="cariTip" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="CariPersonelBirim">
+    <Key>
+      <PropertyRef Name="personelBirimID" />
+    </Key>
+    <Property Name="personelBirimID" Type="int" Nullable="false" />
+    <Property Name="cariID" Type="int" />
+    <Property Name="personelBirimAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="30" />
+    <Property Name="tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="tel2" Type="nvarchar" MaxLength="20" />
+    <Property Name="fax" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="kullanicilar">
+    <Key>
+      <PropertyRef Name="kullaniciID" />
+    </Key>
+    <Property Name="kullaniciID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="StokBirimler">
+    <Key>
+      <PropertyRef Name="StokBirimlerID" />
+    </Key>
+    <Property Name="StokBirimlerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoklarID" Type="int" />
+    <Property Name="birim" Type="nchar" MaxLength="100" />
+    <Property Name="fiyat" Type="decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="StokKategoriler">
+    <Key>
+      <PropertyRef Name="StokKategoriID" />
+    </Key>
+    <Property Name="StokKategoriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ustKategoriID" Type="int" />
+    <Property Name="Ad" Type="nchar" MaxLength="50" />
+    <Property Name="olTarihi" Type="datetime" />
+    <Property Name="gunTarihi" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Stoklar">
+    <Key>
+      <PropertyRef Name="StokID" />
+    </Key>
+    <Property Name="StokID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StokKategoriID" Type="int" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" />
+    <Property Name="aciklama" Type="nvarchar(max)" />
+    <Property Name="gorsel" Type="nvarchar" MaxLength="300" />
+    <Property Name="adet" Type="int" />
+  </EntityType>
+  <EntityContainer Name="MobilCariModelStoreContainer">
+    <EntitySet Name="CariDosyalar" EntityType="Self.CariDosyalar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cariler" EntityType="Self.Cariler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CariPersonelBirim" EntityType="Self.CariPersonelBirim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StokBirimler" EntityType="Self.StokBirimler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StokKategoriler" EntityType="Self.StokKategoriler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Stoklar" EntityType="Self.Stoklar" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

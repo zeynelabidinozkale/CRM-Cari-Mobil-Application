@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7CE8A365-2848-461F-9403-8D5287218458}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CariMobil</RootNamespace>
+    <AssemblyName>CariMobil</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CariController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CariDosyalar.cs">
+      <DependentUpon>MobilCari.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Cariler.cs">
+      <DependentUpon>MobilCari.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CariPersonelBirim.cs">
+      <DependentUpon>MobilCari.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\kullanicilar.cs">
+      <DependentUpon>MobilCari.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MobilCari.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobilCari.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MobilCari.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobilCari.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\MobilCari.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MobilCari.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StokBirimler.cs">
+      <DependentUpon>MobilCari.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StokKategoriler.cs">
+      <DependentUpon>MobilCari.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Stoklar.cs">
+      <DependentUpon>MobilCari.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\animations.css" />
+    <Content Include="Content\css\framework7.css" />
+    <Content Include="Content\css\img\icons.png" />
+    <Content Include="Content\css\img\loader.gif" />
+    <Content Include="Content\css\master.css" />
+    <Content Include="Content\css\reset.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\swipebox.css" />
+    <Content Include="Content\images\apple-touch-icon.png" />
+    <Content Include="Content\images\apple-touch-startup-image-640x920.png" />
+    <Content Include="Content\images\author.png" />
+    <Content Include="Content\images\avatar.jpg" />
+    <Content Include="Content\images\avatar2.jpg" />
+    <Content Include="Content\images\avatar3.jpg" />
+    <Content Include="Content\images\avatar4.jpg" />
+    <Content Include="Content\images\bullet.png" />
+    <Content Include="Content\images\checked.html" />
+    <Content Include="Content\images\comments.png" />
+    <Content Include="Content\images\date.png" />
+    <Content Include="Content\images\dropdown.png" />
+    <Content Include="Content\images\icons\black\back.png" />
+    <Content Include="Content\images\icons\black\blog.png" />
+    <Content Include="Content\images\icons\black\contact.png" />
+    <Content Include="Content\images\icons\black\dribbble.png" />
+    <Content Include="Content\images\icons\black\electronics.png" />
+    <Content Include="Content\images\icons\black\facebook.png" />
+    <Content Include="Content\images\icons\black\form.png" />
+    <Content Include="Content\images\icons\black\gplus.png" />
+    <Content Include="Content\images\icons\black\like.png" />
+    <Content Include="Content\images\icons\black\linkedin.png" />
+    <Content Include="Content\images\icons\black\lock.png" />
+    <Content Include="Content\images\icons\black\logout.png" />
+    <Content Include="Content\images\icons\black\love.png" />
+    <Content Include="Content\images\icons\black\menu_close.png" />
+    <Content Include="Content\images\icons\black\message.png" />
+    <Content Include="Content\images\icons\black\phone.png" />
+    <Content Include="Content\images\icons\black\photos.png" />
+    <Content Include="Content\images\icons\black\pinterest.png" />
+    <Content Include="Content\images\icons\black\rocket.png" />
+    <Content Include="Content\images\icons\black\shop.png" />
+    <Content Include="Content\images\icons\black\slider.png" />
+    <Content Include="Content\images\icons\black\tables.png" />
+    <Content Include="Content\images\icons\black\tabs.png" />
+    <Content Include="Content\images\icons\black\toggle.png" />
+    <Content Include="Content\images\icons\black\trash.png" />
+    <Content Include="Content\images\icons\black\twitter.png" />
+    <Content Include="Content\images\icons\black\user.png" />
+    <Content Include="Content\images\icons\black\users.png" />
+    <Content Include="Content\images\icons\blue\blog.png" />
+    <Content Include="Content\images\icons\blue\contact.png" />
+    <Content Include="Content\images\icons\blue\features.png" />
+    <Content Include="Content\images\icons\blue\form.png" />
+    <Content Include="Content\images\icons\blue\lock.png" />
+    <Content Include="Content\images\icons\blue\music.png" />
+    <Content Include="Content\images\icons\blue\phone.png" />
+    <Content Include="Content\images\icons\blue\photos.png" />
+    <Content Include="Content\images\icons\blue\shop.png" />
+    <Content Include="Content\images\icons\blue\twitter.png" />
+    <Content Include="Content\images\icons\blue\users.png" />
+    <Content Include="Content\images\icons\blue\video.png" />
+    <Content Include="Content\images\icons\white\back.png" />
+    <Content Include="Content\images\icons\white\bike.png" />
+    <Content Include="Content\images\icons\white\blog.png" />
+    <Content Include="Content\images\icons\white\briefcase.png" />
+    <Content Include="Content\images\icons\white\bus.png" />
+    <Content Include="Content\images\icons\white\car.png" />
+    <Content Include="Content\images\icons\white\cart.png" />
+    <Content Include="Content\images\icons\white\categories.png" />
+    <Content Include="Content\images\icons\white\contact.png" />
+    <Content Include="Content\images\icons\white\drink.png" />
+    <Content Include="Content\images\icons\white\features.png" />
+    <Content Include="Content\images\icons\white\food.png" />
+    <Content Include="Content\images\icons\white\form.png" />
+    <Content Include="Content\images\icons\white\gift.png" />
+    <Content Include="Content\images\icons\white\home.png" />
+    <Content Include="Content\images\icons\white\lock.png" />
+    <Content Include="Content\images\icons\white\love.png" />
+    <Content Include="Content\images\icons\white\menu.png" />
+    <Content Include="Content\images\icons\white\message.png" />
+    <Content Include="Content\images\icons\white\mobile.png" />
+    <Content Include="Content\images\icons\white\music.png" />
+    <Content Include="Content\images\icons\white\orders.png" />
+    <Content Include="Content\images\icons\white\phone.png" />
+    <Content Include="Content\images\icons\white\photos.png" />
+    <Content Include="Content\images\icons\white\rocket.png" />
+    <Content Include="Content\images\icons\white\settings.png" />
+    <Content Include="Content\images\icons\white\shop.png" />
+    <Content Include="Content\images\icons\white\tables.png" />
+    <Content Include="Content\images\icons\white\user.png" />
+    <Content Include="Content\images\icons\white\users.png" />
+    <Content Include="Content\images\icons\white\video.png" />
+    <Content Include="Content\images\loader.gif" />
+    <Content Include="Content\images\nav-next.png" />
+    <Content Include="Content\images\nav-prev.png" />
+    <Content Include="Content\images\page_photo.jpg" />
+    <Content Include="Content\images\page_photo2.jpg" />
+    <Content Include="Content\images\page_photo3.jpg" />
+    <Content Include="Content\images\photos\photo1.jpg" />
+    <Content Include="Content\images\photos\photo10.jpg" />
+    <Content Include="Content\images\photos\photo11.jpg" />
+    <Content Include="Content\images\photos\photo12.jpg" />
+    <Content Include="Content\images\photos\photo13.jpg" />
+    <Content Include="Content\images\photos\photo14.jpg" />
+    <Content Include="Content\images\photos\photo15.jpg" />
+    <Content Include="Content\images\photos\photo2.jpg" />
+    <Content Include="Content\images\photos\photo3.jpg" />
+    <Content Include="Content\images\photos\photo4.jpg" />
+    <Content Include="Content\images\photos\photo5.jpg" />
+    <Content Include="Content\images\photos\photo6.jpg" />
+    <Content Include="Content\images\photos\photo7.jpg" />
+    <Content Include="Content\images\photos\photo8.jpg" />
+    <Content Include="Content\images\photos\photo9.jpg" />
+    <Content Include="Content\images\shop_thumb1.html" />
+    <Content Include="Content\images\shop_thumb2.html" />
+    <Content Include="Content\images\shop_thumb3.html" />
+    <Content Include="Content\images\slide1.jpg" />
+    <Content Include="Content\images\slide2.jpg" />
+    <Content Include="Content\images\slide3.jpg" />
+    <Content Include="Content\images\subnav_white.png" />
+    <Content Include="Content\images\swipe_more.png" />
+    <Content Include="Content\images\switch_11.png" />
+    <Content Include="Content\images\switch_12.png" />
+    <Content Include="Content\images\switch_13.png" />
+    <Content Include="Content\images\switch_13_active.png" />
+    <Content Include="Content\images\trans_black.png" />
+    <Content Include="Content\images\trans_black_gradient.png" />
+    <Content Include="Content\img\i-f7-ios.png" />
+    <Content Include="Content\img\i-form-calendar-ios.html" />
+    <Content Include="Content\img\i-form-comment-ios.html" />
+    <Content Include="Content\img\i-form-email-ios.html" />
+    <Content Include="Content\img\i-form-gender-ios.html" />
+    <Content Include="Content\img\i-form-name-ios.html" />
+    <Content Include="Content\img\i-form-password-ios.html" />
+    <Content Include="Content\img\i-form-settings-ios.html" />
+    <Content Include="Content\img\i-form-tel-ios.html" />
+    <Content Include="Content\img\i-form-toggle-ios.html" />
+    <Content Include="Content\img\i-form-url-ios.html" />
+    <Content Include="Content\js\audio.min.js" />
+    <Content Include="Content\js\email.js" />
+    <Content Include="Content\js\framework7.js" />
+    <Content Include="Content\js\jquery-1.10.1.min.js" />
+    <Content Include="Content\js\jquery.fitvids.js" />
+    <Content Include="Content\js\jquery.swipebox.js" />
+    <Content Include="Content\js\jquery.validate.min.js" />
+    <Content Include="Content\js\master.js" />
+    <Content Include="Content\js\my-app.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\MobilCari.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MobilCari.edmx</DependentUpon>
+      <LastGenOutput>MobilCari.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\MobilCari.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MobilCari.edmx</DependentUpon>
+      <LastGenOutput>MobilCari.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\MobilCari.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MobilCari.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\MobilCari.edmx.diagram">
+      <DependentUpon>MobilCari.edmx</DependentUpon>
+    </Content>
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Site.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Cari\Index.cshtml" />
+    <Content Include="Views\Cari\Detay.cshtml" />
+    <Content Include="Views\Cari\Ekle.cshtml" />
+    <Content Include="Views\Cari\Sil.cshtml" />
+    <Content Include="Views\Cari\Duzenle.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Uploads\CariUploads\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49176</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49176/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

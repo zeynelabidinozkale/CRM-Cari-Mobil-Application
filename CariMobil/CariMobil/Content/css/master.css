@@ -1,0 +1,31 @@
+﻿.navbar_right.navbar_right_menu
+{
+    padding-right:0px;
+}
+.btn-light {
+    border: 2px solid #e7e7e7;
+}
+.btn-warning,.btn-warning:hover{
+    color:#fff;
+}
+.detailcontent{
+    padding-top:20px;
+}
+.slider-padding{
+    padding-top:20px;
+}
+.nav-pills .nav-link{
+    border-radius:0px;
+
+}
+.tab-content {
+    border: 2px solid #007bff;
+}
+.tab-content{
+    padding-top:20px;
+    padding-bottom:20px;
+}
+.emptyMessage{
+    padding:20px;
+    color:#dedede;
+}

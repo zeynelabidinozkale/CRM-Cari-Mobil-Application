@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MobilCariModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CariDosyalar">
+    <Key>
+      <PropertyRef Name="CariDosyalarID" />
+    </Key>
+    <Property Name="CariDosyalarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="cariIletisimID" Type="Int32" />
+    <Property Name="path" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="yuklenmeTarihi" Type="DateTime" Precision="3" />
+    <Property Name="cariId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Cariler">
+    <Key>
+      <PropertyRef Name="CariId" />
+    </Key>
+    <Property Name="CariId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="olTarih" Type="DateTime" Precision="3" />
+    <Property Name="gunTarih" Type="DateTime" Precision="3" />
+    <Property Name="tel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="tel2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sil" Type="Boolean" Nullable="false" />
+    <Property Name="cariTip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CariPersonelBirim">
+    <Key>
+      <PropertyRef Name="personelBirimID" />
+    </Key>
+    <Property Name="personelBirimID" Type="Int32" Nullable="false" />
+    <Property Name="cariID" Type="Int32" />
+    <Property Name="personelBirimAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="tel2" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="fax" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="kullanicilar">
+    <Key>
+      <PropertyRef Name="kullaniciID" />
+    </Key>
+    <Property Name="kullaniciID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sifre" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StokBirimler">
+    <Key>
+      <PropertyRef Name="StokBirimlerID" />
+    </Key>
+    <Property Name="StokBirimlerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoklarID" Type="Int32" />
+    <Property Name="birim" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="fiyat" Type="Decimal" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="StokKategoriler">
+    <Key>
+      <PropertyRef Name="StokKategoriID" />
+    </Key>
+    <Property Name="StokKategoriID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ustKategoriID" Type="Int32" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="true" Unicode="true" />
+    <Property Name="olTarihi" Type="DateTime" Precision="3" />
+    <Property Name="gunTarihi" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Stoklar">
+    <Key>
+      <PropertyRef Name="StokID" />
+    </Key>
+    <Property Name="StokID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StokKategoriID" Type="Int32" />
+    <Property Name="ad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="aciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="gorsel" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="adet" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="MobilCariEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CariDosyalar" EntityType="Self.CariDosyalar" />
+    <EntitySet Name="Cariler" EntityType="Self.Cariler" />
+    <EntitySet Name="CariPersonelBirim" EntityType="Self.CariPersonelBirim" />
+    <EntitySet Name="kullanicilar" EntityType="Self.kullanicilar" />
+    <EntitySet Name="StokBirimler" EntityType="Self.StokBirimler" />
+    <EntitySet Name="StokKategoriler" EntityType="Self.StokKategoriler" />
+    <EntitySet Name="Stoklar" EntityType="Self.Stoklar" />
+  </EntityContainer>
+</Schema>

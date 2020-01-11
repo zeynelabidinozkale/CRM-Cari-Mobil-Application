@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MobilCariModelStoreContainer" CdmEntityContainer="MobilCariEntities">
+    <EntitySetMapping Name="CariDosyalar">
+      <EntityTypeMapping TypeName="MobilCariModel.CariDosyalar">
+        <MappingFragment StoreEntitySet="CariDosyalar">
+          <ScalarProperty Name="cariId" ColumnName="cariId" />
+          <ScalarProperty Name="CariDosyalarID" ColumnName="CariDosyalarID" />
+          <ScalarProperty Name="path" ColumnName="path" />
+          <ScalarProperty Name="yuklenmeTarihi" ColumnName="yuklenmeTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cariler">
+      <EntityTypeMapping TypeName="MobilCariModel.Cariler">
+        <MappingFragment StoreEntitySet="Cariler">
+          <ScalarProperty Name="CariId" ColumnName="CariId" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="olTarih" ColumnName="olTarih" />
+          <ScalarProperty Name="gunTarih" ColumnName="gunTarih" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="tel2" ColumnName="tel2" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sil" ColumnName="sil" />
+          <ScalarProperty Name="cariTip" ColumnName="cariTip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CariPersonelBirim">
+      <EntityTypeMapping TypeName="MobilCariModel.CariPersonelBirim">
+        <MappingFragment StoreEntitySet="CariPersonelBirim">
+          <ScalarProperty Name="personelBirimID" ColumnName="personelBirimID" />
+          <ScalarProperty Name="cariID" ColumnName="cariID" />
+          <ScalarProperty Name="personelBirimAdi" ColumnName="personelBirimAdi" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="tel" ColumnName="tel" />
+          <ScalarProperty Name="tel2" ColumnName="tel2" />
+          <ScalarProperty Name="fax" ColumnName="fax" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="kullanicilar">
+      <EntityTypeMapping TypeName="MobilCariModel.kullanicilar">
+        <MappingFragment StoreEntitySet="kullanicilar">
+          <ScalarProperty Name="kullaniciID" ColumnName="kullaniciID" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="sifre" ColumnName="sifre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StokBirimler">
+      <EntityTypeMapping TypeName="MobilCariModel.StokBirimler">
+        <MappingFragment StoreEntitySet="StokBirimler">
+          <ScalarProperty Name="StokBirimlerID" ColumnName="StokBirimlerID" />
+          <ScalarProperty Name="StoklarID" ColumnName="StoklarID" />
+          <ScalarProperty Name="birim" ColumnName="birim" />
+          <ScalarProperty Name="fiyat" ColumnName="fiyat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StokKategoriler">
+      <EntityTypeMapping TypeName="MobilCariModel.StokKategoriler">
+        <MappingFragment StoreEntitySet="StokKategoriler">
+          <ScalarProperty Name="StokKategoriID" ColumnName="StokKategoriID" />
+          <ScalarProperty Name="ustKategoriID" ColumnName="ustKategoriID" />
+          <ScalarProperty Name="Ad" ColumnName="Ad" />
+          <ScalarProperty Name="olTarihi" ColumnName="olTarihi" />
+          <ScalarProperty Name="gunTarihi" ColumnName="gunTarihi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stoklar">
+      <EntityTypeMapping TypeName="MobilCariModel.Stoklar">
+        <MappingFragment StoreEntitySet="Stoklar">
+          <ScalarProperty Name="StokID" ColumnName="StokID" />
+          <ScalarProperty Name="StokKategoriID" ColumnName="StokKategoriID" />
+          <ScalarProperty Name="ad" ColumnName="ad" />
+          <ScalarProperty Name="aciklama" ColumnName="aciklama" />
+          <ScalarProperty Name="gorsel" ColumnName="gorsel" />
+          <ScalarProperty Name="adet" ColumnName="adet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

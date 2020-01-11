@@ -1,0 +1,54 @@
+﻿@using CariMobil.Models
+@model Cariler
+@{
+    ViewBag.Title = "Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+<div class="pages">
+    <div data-page="blogsingle" class="page no-toolbar no-navbar">
+        <div class="page-content">
+
+            <div class="navbarpages navbarpagesbg">
+                <div class="navbar_left">
+                    <div class="logo_text"><a onclick="window.history.back()" href="#"> <i class="fa fa-arrow-left"></i></a>  <a href="/home/index/">CariMobil</a></div>
+                </div>
+                <div class="navbar_right navbar_right_menu">
+                    <a href="#" data-panel="left" class="open-panel"><img src="~/content/images/icons/white/menu.png" alt="" title="" /></a>
+                </div>
+                <div class="navbar_right">
+                    <a href="#" data-panel="right" class="open-panel"><img src="~/content/images/icons/white/user.png" alt="" title="" /></a>
+                </div>
+                <div class="navbar_right">
+                    <a href="cart.html" data-view=".view-main"><img src="~/content/images/icons/white/cart.png" alt="" title="" /><span>3</span></a>
+                </div>
+            </div>
+
+            <div id="pages_maincontent">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-3" style="margin:0px auto;">
+                            <div class="card">
+                                <form action="/cari/sil/" method="post">
+                                    <div class="card-body">
+                                        <h2 style="margin-bottom:0px;">@Model.ad</h2>
+                                  
+                                        <p class="card-text"> Silmek istediğinizden emin misiniz? </p>
+                                        <a href="/cari/sil/@Model.CariId" class="btn btn-block btn-danger btn-lg"><i class="fa fa-trash"></i>  Cariyi Sil</a>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

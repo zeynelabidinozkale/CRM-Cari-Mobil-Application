@@ -1,0 +1,105 @@
+﻿@using CariMobil.Models
+@model List<Cariler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="pages" onload="myFunction()">
+    <div data-page="tables" class="page no-toolbar no-navbar">
+        <div class="page-content">
+
+            <div class="navbarpages navbarpagesbg">
+                <div class="navbar_left">
+                    <div class="logo_text"> <a onclick="window.history.back()" href="#"> <i class="fa fa-arrow-left"></i></a> <a href="/home/index/">CariMobil</a></div>
+                </div>
+                <div class="navbar_right navbar_right_menu">
+                    <a href="#" data-panel="left" class="open-panel"><img src="~/content/images/icons/white/menu.png" alt="" title="" /></a>
+                </div>
+                <div class="navbar_right">
+                    <a href="#" data-panel="right" class="open-panel"><img src="~/content/images/icons/white/user.png" alt="" title="" /></a>
+                </div>
+                <div class="navbar_right">
+                    <a href="cart.html" data-view=".view-main"><img src="~/content/images/icons/white/cart.png" alt="" title="" /><span>3</span></a>
+                </div>
+            </div>
+
+            <div id="pages_maincontent">
+                <div class="col-sm-12">
+                    <h2 class="page_title">
+                        Cariler
+                        <a class="btn btn-success pull-right" href="/cari/Ekle/">+ Cari Ekle</a>
+
+                    </h2>
+                        
+                 
+
+                    <div class="page_single layout_fullwidth_padding">
+
+                        <div class="form-row">
+                            <div class="form-group col-md-8">
+                            
+                            </div>
+                            <div class="form-group col-md-4">
+                                <div class="input-group">
+
+                                    <input type="text" size="30" onkeyup="showResult(this.value)" placeholder="Ara..."  class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="basic-addon1"> <i class="fa fa-search"></i></span>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+
+                        @if (ViewBag.icerik != null)
+                        {
+
+                            <div class="alert alert-primary">
+                                @ViewBag.icerik
+                            </div>
+                        }
+                            <div class="allItems">
+                                @foreach (var item in Model)
+                                {
+                                    <div class="card mb-3 item-row">
+                                        <div class="row no-gutters">
+                                            <div class="col-sm-2">
+                                                <img src="~/Content/images/photos/photo1.jpg" class="card-img" alt="...">
+                                            </div>
+                                            <div class="col-sm-10">
+                                                <div class="card-body">
+                                                    <h5 class="card-title">
+                                                        <a href="/cari/Detay/@item.CariId"><b>@item.ad</b></a>
+                                                    </h5>
+                                                    <p class="card-text">
+
+                                                        <b>e-mail : </b> <span>@item.email </span> &nbsp;
+                                                        <b>Tel : </b> <span> @item.tel</span>&nbsp;
+                                                        <b>Fax : </b> <span>@item.fax </span>
+                                                    </p>
+                                                    <div class="text-right">
+                                                        <a class="text-left btn btn-light" href="/cari/toplantiEkle/@item.CariId"><i class="fa fa-calendar"></i> Toplantı Ayarla</a>
+
+                                                        <a class="btn btn-primary" href="/cari/Detay/@item.CariId"><i class="fa fa-search"></i> detaylar</a>
+                                                        <a class="btn btn-warning " href="/cari/duzenle/@item.CariId"><i class="fa fa-pencil"></i> düzenle</a>
+                                                        <button data-popup=".popup-del " class="btn btn-danger open-popup " onclick="delIdFunction(@item.CariId)"> <i class="fa fa-trash"></i> sil </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                }</div>
+
+                            </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
